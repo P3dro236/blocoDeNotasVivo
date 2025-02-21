@@ -1,0 +1,9 @@
+body{
+    background-color: rgba(24, 24, 24, 1) !important;
+}
+h1, label{
+    font-family: Oswald;
+}
+input{
+    font-family: Roboto;
+}
