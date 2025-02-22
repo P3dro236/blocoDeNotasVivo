@@ -1,0 +1,35 @@
+body{
+    background-color: rgba(24, 24, 24, 1) !important;
+}
+h1, label, #addFieldButton{
+    font-family: Oswald;
+    font-weight: bold;
+}
+label{
+    font-size: 18px;
+    cursor: pointer;
+}
+#addFieldButton{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+input, select{
+    width: 60% !important; 
+    font-family: Roboto;
+}
+select{
+    cursor: pointer;
+}
+.is-valid{
+    border-color: green !important;
+}
+.sem-setas::-webkit-outer-spin-button,
+.sem-setas::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.sem-setas {
+    -moz-appearance: textfield;
+}
