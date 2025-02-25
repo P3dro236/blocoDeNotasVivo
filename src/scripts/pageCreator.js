@@ -8,7 +8,7 @@ export const createPage = (item) => {
     return `
         <div class="d-flex justify-content-center align-items-center w-100 mb-4 delete">
             <div class="line d-flex justify-content-center align-items-center w-100">
-                <label class="fw-bold fs-5 text-white me-2">${item}</label>
+                <label role="button" class="fw-bold fs-5 text-white me-2" data-bs-toggle="modal" data-bs-target="#changeLabelValueModal">${item}</label>
                 <input type="text" class="form-control me-2 text-center" name="${item}">
                 <button class="btn btn-success me-2"><i class="bi bi-clipboard"></i></button>
                 <button class="btn btn-warning me-2"><i class="bi bi-x-circle"></i></button>

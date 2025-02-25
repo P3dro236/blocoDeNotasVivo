@@ -23,12 +23,32 @@ $(document).ready(function() {
         $(this).closest(".delete").find("input").val("");
         validateIMEI();
     });
-
+    // Validação do campo IMEI
     $("input[name='IMEI']").on("keyup", validateIMEI);
+    function validateIMEI() {
+        const isValid = $(".tab-pane.active input[name='IMEI']").val().length === 15;
+        $(".tab-pane.active input[name='IMEI']").toggleClass("is-valid", isValid);
+    }
     createMask();
-});
 
-function validateIMEI() {
-    const isValid = $("input[name='IMEI']").val().length === 15;
-    $("input[name='IMEI']").toggleClass("is-valid", isValid);
-}
+    // Função para alterar o nome do label
+    $("#form").on("click", "label", function() {
+        const inputField = $(this).next("input");
+        const modal = $("#changeLabelValueModal");
+        const inputLabelNewName = $("#inputLabelNewName");
+        const changeCurrentLabel = $("#changeCurrentLabel");
+        modal.modal('show').on('shown.bs.modal', function () {
+            inputLabelNewName.focus();
+        });
+        changeCurrentLabel.off("click").on("click", function() {
+            const newLabelName = inputLabelNewName.val().toUpperCase();
+            inputField.prev("label").text(newLabelName);
+            modal.modal('hide');
+        });
+        inputLabelNewName.off("keypress").on("keypress", function(e) {
+            if (e.which === 13) { // Enter key code
+                changeCurrentLabel.click();
+            }
+        }).val("");
+    });
+});
