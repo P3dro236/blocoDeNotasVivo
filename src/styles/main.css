@@ -1,0 +1,14 @@
+body{
+    background-color: rgba(24, 24, 24, 1) !important;
+}
+#form{
+    background-color: #121212;
+}
+label, #addFieldButton{
+    font-family: Oswald;
+    width: 105px;
+}
+input{
+    width: 60% !important; 
+    font-family: Roboto;
+}
